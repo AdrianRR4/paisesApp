@@ -1,0 +1,33 @@
+<div class="animate__animated animate__pulse">
+    <h2 class="text-center">By capital</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <!--  <form (ngSubmit)="search()" action="" autocomplete="off">
+            <input [(ngModel)]="enterData" type="text" name="country" id="" class="form-control"
+                placeholder="Search country">
+        </form>  -->
+            <app-countries-input (onEnter)="searchCapital($event)">
+
+
+            </app-countries-input>
+        </div>
+
+    </div>
+</div>
+
+
+
+<hr>
+<div *ngIf="error" class="alert alert-danger">
+    No se encontro nada con la busqueda {{capital }}
+</div>
+
+<div class="row">
+
+    <div class="col" *ngIf="country.length>0">
+        <app-countries-table [country]="country"></app-countries-table>
+
+    </div>
+</div>
